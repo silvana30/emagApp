@@ -1,0 +1,5 @@
+OrderP{id=1, user=User{id=1, username='daniela', password='daniela', email='daniela@yahoo.com', phone='0743625968', address='Oradea', cardNr='0123-2563-1452-2563', loyal=true, logged=true}, placementDate='2018-05-25'}
+OrderP{id=6, user=User{id=1, username='daniela', password='daniela', email='daniela@yahoo.com', phone='0743625968', address='Oradea', cardNr='0123-2563-1452-2563', loyal=true, logged=true}, placementDate='2018-05-26'}
+OrderP{id=11, user=User{id=1, username='daniela', password='daniela', email='daniela@yahoo.com', phone='0743625968', address='Oradea', cardNr='0123-2563-1452-2563', loyal=true, logged=true}, placementDate='2018-05-27'}
+OrderP{id=12, user=User{id=1, username='daniela', password='daniela', email='daniela@yahoo.com', phone='0743625968', address='Oradea', cardNr='0123-2563-1452-2563', loyal=true, logged=true}, placementDate='2018-05-27'}
+OrderP{id=13, user=User{id=1, username='daniela', password='daniela', email='daniela@yahoo.com', phone='0743625968', address='Oradea', cardNr='0123-2563-1452-2563', loyal=true, logged=true}, placementDate='2018-05-27'}

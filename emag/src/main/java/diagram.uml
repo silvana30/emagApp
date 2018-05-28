@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="553.525" y="766.0">controller.ControllerUser</node>
+    <node x="1092.7487805250303" y="580.0">view.SpecificationView</node>
+    <node x="1075.1374999999998" y="766.0">controller.ControllerAdmin</node>
+    <node x="0.0" y="766.0">model.model.operations.AdminOp</node>
+    <node x="383.49781028693496" y="580.0">view.MyOrders</node>
+    <node x="281.30000000000007" y="766.0">view.RegisterView</node>
+    <node x="50.497810286934964" y="580.0">model.Admin</node>
+    <node x="1020.1373611111112" y="0.0">model.User</node>
+    <node x="760.5" y="212.0">model.Cart</node>
+    <node x="761.8583333333333" y="892.0">controller.ControllerInit</node>
+    <node x="1332.6237805250303" y="766.0">model.Encryption</node>
+    <node x="814.3583333333333" y="766.0">view.Log</node>
+    <node x="891.5" y="338.0">model.model.operations.OrderOp</node>
+    <node x="681.493717490843" y="96.0">model.Product</node>
+    <node x="1114.2760805860808" y="212.0">model.model.operations.UserOp</node>
+    <node x="470.0" y="96.0">model.Specification</node>
+    <node x="848.838955586081" y="96.0">model.OrderP</node>
+    <node x="-222.6428571428571" y="328.48447204968943">view.AdminView</node>
+    <node x="705.25" y="580.0">view.UserView</node>
+    <node x="175.49781028693496" y="580.0">view.SpecificationView2</node>
+    <node x="552.25" y="212.0">model.model.operations.ProductOp</node>
+    <node x="808.7885805860809" y="484.0">model.model.operations.CartOp</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.7740384615384616" x="490.5" y="406.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
