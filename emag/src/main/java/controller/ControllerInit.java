@@ -23,7 +23,7 @@ public class ControllerInit {
 
                 if(adminOp.logAdmin(log.getUsernameF().getText(),log.getPasswordF().getText())==true){
                     ControllerAdmin controllerAdmin=new ControllerAdmin();
-                }else if(userOp.logUser(log.getUsernameF().getText(),log.getPasswordF().getText())==true){
+                }else if(userOp.logUser(log.getUsernameF().getText(),Encryption.encrypt(log.getPasswordF().getText()))==true){
                     ControllerUser controllerUser=new ControllerUser();
                 }else{
                     throw new IllegalArgumentException();

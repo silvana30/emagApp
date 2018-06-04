@@ -1,9 +1,6 @@
 package model.model.operations;
 
-import model.Cart;
-import model.OrderP;
-import model.Product;
-import model.User;
+import model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -17,7 +14,8 @@ public class CartOp {
     //private OrderOp orderOp=new OrderOp();
 
     public Cart createCart(int quantity,  int idProduct){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -32,7 +30,7 @@ public class CartOp {
         session.save(cart);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return cart;
     }
 
@@ -61,7 +59,8 @@ public class CartOp {
         OrderOp orderOp=new OrderOp();
         List<Cart> list;
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -76,13 +75,14 @@ public class CartOp {
         list = query.list();
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
 
         return list;
     }
 
     public void removeCart(int i) {
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -96,7 +96,7 @@ public class CartOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
 
     }
 }

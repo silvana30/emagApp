@@ -1,0 +1,1 @@
+OrderP{id=19, user=User{id=9, username='dora', password='1f545a6d49bd6dc815ddd731d0c2a2ad', email='dora@gmail.com', phone='0742552204', address='Miercurea Ciuc', cardNr='5555-5555-5555-5555', loyal=false, logged=true}, placementDate=2018-06-03, totalPrice=1000.0}

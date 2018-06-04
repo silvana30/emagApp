@@ -1,5 +1,6 @@
 package model.model.operations;
 
+import model.HibernateUtil;
 import model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,7 +15,8 @@ public class UserOp {
 
     public List<User> readUsers(){
         List<User> users;
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -25,13 +27,14 @@ public class UserOp {
         users = session.createSQLQuery("SELECT * FROM user").addEntity(User.class).list();
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
 
         return users;
     }
 
     public User createUser(String username, String password, String email, String phone, String address, String cardN) {
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -41,7 +44,7 @@ public class UserOp {
         session.save(user);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return user;
 
     }
@@ -49,7 +52,8 @@ public class UserOp {
 
     public boolean logUser(String username, String password) {
         boolean rez = false;
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -73,14 +77,15 @@ public class UserOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return rez;
 
 
     }
 
     public User getLogged(){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -93,7 +98,7 @@ public class UserOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return user;
 
 
@@ -119,7 +124,8 @@ public class UserOp {
 
     }
     public void logout(){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -134,10 +140,11 @@ public class UserOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
     }
     public void makeLoyal(int id){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -148,6 +155,6 @@ public class UserOp {
         session.update(user);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
     }
 }

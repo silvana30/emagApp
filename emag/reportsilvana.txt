@@ -1,1 +1,1 @@
-OrderP{id=16, user=User{id=3, username='silvana', password='silvana', email='silvana.man30@gmail.com', phone='0742342204', address='Badacin,nr 251', cardNr='1234-1234-1234-1234', loyal=false, logged=true}, placementDate=2018-05-27, totalPrice=1700.0}
+OrderP{id=17, user=User{id=3, username='silvana', password='silvana', email='silvana.man30@gmail.com', phone='0742342204', address='Badacin,nr 251', cardNr='1234-1234-1234-1234', loyal=false, logged=true}, placementDate=2018-05-27, totalPrice=1000.0}

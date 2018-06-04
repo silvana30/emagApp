@@ -1,5 +1,6 @@
 package model.model.operations;
 
+import model.HibernateUtil;
 import model.OrderP;
 import model.Product;
 import model.Specification;
@@ -17,7 +18,8 @@ public class ProductOp {
 
         List<Product> list;
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -28,13 +30,14 @@ public class ProductOp {
         list = session.createSQLQuery("SELECT * FROM product").addEntity(Product.class).list();
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
 
         return list;
     }
 
     public Product createProduct(String name, double price, String category, boolean resealed){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -44,12 +47,13 @@ public class ProductOp {
         session.save(product);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return product;
     }
 
     public void deleteProduct(int id){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -59,7 +63,7 @@ public class ProductOp {
         session.delete(product);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
     }
 
     public void updateProduct(int id, double price){
@@ -94,7 +98,8 @@ public class ProductOp {
     }
 
     public int getMaxIdProd(){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -106,7 +111,7 @@ public class ProductOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return product.getId();
     }
     public double getPrice(int id){
@@ -128,7 +133,8 @@ public class ProductOp {
     }
 
     public Specification createSpecification(int id, String processor, String screenSize, String ram, String hdd, String videoCard, String color, String camera){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -138,12 +144,13 @@ public class ProductOp {
         session.save(specification);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return specification;
     }
 
     public Specification getSpecification(int id){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -151,12 +158,13 @@ public class ProductOp {
         Specification specification=session.find(Specification.class,id);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return specification;
     }
 
     public Product findById(int id){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -165,7 +173,7 @@ public class ProductOp {
         Product product =session.find(Product.class,id);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
         return product;
     }
 }

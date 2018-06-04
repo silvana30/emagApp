@@ -1,9 +1,6 @@
 package model.model.operations;
 
-import model.Cart;
-import model.OrderP;
-import model.Product;
-import model.User;
+import model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -27,7 +24,8 @@ public class OrderOp {
         UserOp userOp=new UserOp();
         CartOp cartOp=new CartOp();
         ProductOp productOp=new ProductOp();
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -64,12 +62,13 @@ public class OrderOp {
         session.save(order);
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return order;
     }
 
     public int getMaxId(){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -81,7 +80,7 @@ public class OrderOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return order.getId();
     }
 
@@ -98,7 +97,7 @@ public class OrderOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return order;
     }
 
@@ -109,7 +108,8 @@ public class OrderOp {
         UserOp userOp=new UserOp();
         List<OrderP> list;
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
 
         Session session = sessionFactory.openSession();
@@ -125,7 +125,7 @@ public class OrderOp {
         list = query.list();
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
 
         return list;
     }

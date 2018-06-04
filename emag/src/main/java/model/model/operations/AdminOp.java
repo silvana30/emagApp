@@ -1,6 +1,7 @@
 package model.model.operations;
 
 import model.Admin;
+import model.HibernateUtil;
 import model.Product;
 import model.User;
 import org.hibernate.Session;
@@ -16,7 +17,8 @@ public class AdminOp {
 
     public boolean logAdmin(String username, String password) {
         boolean rez = false;
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+       // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
 
         Session session = sessionFactory.openSession();
 
@@ -37,7 +39,7 @@ public class AdminOp {
 
         session.getTransaction().commit();
         session.close();
-        sessionFactory.close();
+       // sessionFactory.close();
         return rez;
 
 
